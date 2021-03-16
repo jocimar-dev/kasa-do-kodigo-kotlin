@@ -1,9 +1,14 @@
 package br.com.zup.autores
 
-import io.netty.util.concurrent.Promise
+class DetalhesDoAutorResponse ( autor: Autor ) {
+    var nome: String = ""
+    var email: String = ""
+    var descricao: String = ""
 
-class DetalhesDoAutorResponse(autor: Autor) {
-    val nome = autor.nome
-    val email = autor.email
-    val descricao = autor.descricao
+    init {
+        nome = autor.nome.toString()
+        email = autor.email.toString()
+        descricao = autor.descricao.toString()
     }
+}
+

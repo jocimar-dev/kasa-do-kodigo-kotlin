@@ -4,9 +4,18 @@ import javax.persistence.Embeddable
 
 @Embeddable
 class Endereco(enderecoResponse: EnderecoResponse,
-               val numero: String,
-               val cep: String) {
-    val rua = enderecoResponse.rua
-    val cidade = enderecoResponse.cidade
-    val estado = enderecoResponse.estado
+               var numero: String
+             ) {
+    var rua: String? = ""
+    var cidade: String? = ""
+    var estado: String? = ""
+    var cep: String? = ""
+
+    init {
+        cep = enderecoResponse?.cep
+        rua = enderecoResponse?.logradouro
+        cidade = enderecoResponse?.localidade
+        estado = enderecoResponse?.uf
+
+    }
 }

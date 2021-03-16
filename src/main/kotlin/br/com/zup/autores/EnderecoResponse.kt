@@ -1,5 +1,10 @@
 package br.com.zup.autores
 
-data class EnderecoResponse(val rua: String,
-                       val cidade: String,
-                       val estado: String)
+data class EnderecoResponse(
+    var cep: String?,
+    var logradouro: String?,
+    var complemento: String?,
+    var bairro: String?,
+    var localidade: String?,
+    var uf: String?
+)
